@@ -1,0 +1,36 @@
+<div class="border">
+<form [formGroup]="form" (ngSubmit)="onSubmitModelBased()" >
+  <button type="button"  style="float: right;" mat-flat-button (click)="reset()">Clear all</button>
+  <mat-form-field class="full-width-field">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name">
+  </mat-form-field>
+  <br>
+  <mat-form-field class="full-width-field">
+    <mat-label>Surname</mat-label>
+    <input matInput formControlName="surname">
+  </mat-form-field>
+  <br>
+  <mat-form-field class="full-width-field">
+    <mat-label>Address</mat-label>
+    <input matInput formControlName="address">
+  </mat-form-field>
+  <br>
+  <mat-form-field class="full-width-field">
+    <mat-label>Phone</mat-label>
+    <input matInput formControlName="phone">
+  </mat-form-field>
+  <br>
+  <mat-form-field class="full-width-field">
+    <mat-label>Comments</mat-label>
+    <textarea matInput formControlName="comments"></textarea>
+  </mat-form-field>
+  <br>
+  <mat-checkbox  required formControlName="privacy"> I agreed with the privacy policy </mat-checkbox>
+  <br>
+  <div class="button-footer">
+    <button style="width: 100%;" type="submit"  mat-raised-button color="primary" [disabled]="!form.valid" (submit)="onSubmitModelBased()">Submit</button>
+  </div>
+
+</form>
+</div>
