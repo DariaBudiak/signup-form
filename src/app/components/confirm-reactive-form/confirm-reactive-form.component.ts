@@ -14,14 +14,14 @@ export class ConfirmReactiveFormComponent implements OnInit {
   user: User;
   phoneNumberPattern = "^[+0-9]?[0-9\\.\\-\\(\\)]+$";
   englishNamePattern = "^[a-zA-Z]+$";
-  firstName = new FormControl("", Validators.required);
+  name = new FormControl("", Validators.compose([
+    Validators.required,
+    Validators.pattern(this.englishNamePattern)
+  ]));
 
   constructor(fb: FormBuilder,private submitService: SubmitService) {
     this.form = fb.group({
-      "name": ['', Validators.compose([
-        Validators.required,
-        Validators.pattern(this.englishNamePattern)
-      ])],
+      "name": this.name,
       "surname":['', Validators.compose([
         Validators.required,
         Validators.pattern(this.englishNamePattern)

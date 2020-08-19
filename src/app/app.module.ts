@@ -13,11 +13,15 @@ import { SubmitService } from './services/submit.service';
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
 import { ConfirmFormDrivenComponent } from './components/confirm-driven-form/confirm-driven-form.component';
 import { ConfirmReactiveFormComponent } from './components/confirm-reactive-form/confirm-reactive-form.component';
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     ConfirmReactiveFormComponent,
-    ConfirmFormDrivenComponent
+    ConfirmFormDrivenComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,8 @@ import { ConfirmReactiveFormComponent } from './components/confirm-reactive-form
     MatFormFieldModule,
     MatGridListModule,
     MatInputModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    AppRoutingModule
   ],
   providers: [SubmitService, {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}],
   bootstrap: [AppComponent]

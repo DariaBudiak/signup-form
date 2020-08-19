@@ -30,7 +30,8 @@
     <mat-checkbox  required [(ngModel)]="user.privacy" name="userPrivacy"> I agreed with the privacy policy </mat-checkbox>
     <br>
     <div class="button-footer">
-      <button style="width: 100%;" type="submit"  mat-raised-button color="primary" [disabled]="!submitForm.valid" >Submit</button>
+      <button  type="button"   [routerLink]="''"  mat-stroked-button color="primary" >Back</button>
+      <button  type="submit"  mat-raised-button color="primary" [disabled]="!submitForm.valid" >Submit</button>
     </div>
   </form>
 </div>

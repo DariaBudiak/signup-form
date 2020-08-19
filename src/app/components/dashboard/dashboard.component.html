@@ -1,0 +1,19 @@
+<div stylw="display:flex; ">
+
+<div class="border" style="    background-image: url(assets/img/neo.png);
+display: table-cell;
+vertical-align: bottom;
+height: 265px;
+width: 300px;
+background-repeat: no-repeat;">
+  <div style="     display: flex;
+justify-content: space-between;
+margin: 20px;">
+    <a style="    justify-content: flex-start; margin-left: 10px;" type="button" [routerLink]="'/driven'"
+      mat-raised-button color="warn">Driven Form</a>
+    <a style="    justify-content: flex-end;
+margin-left: 35px;" type="button" [routerLink]="'/reactive'" mat-raised-button color="primary">Reactive Form</a>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+</div>
