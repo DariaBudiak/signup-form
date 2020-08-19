@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { SubmitService } from './services/submit.service';
+import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
 import { ConfirmFormDrivenComponent } from './components/confirm-driven-form/confirm-driven-form.component';
 import { ConfirmReactiveFormComponent } from './components/confirm-reactive-form/confirm-reactive-form.component';
 @NgModule({
@@ -29,7 +30,7 @@ import { ConfirmReactiveFormComponent } from './components/confirm-reactive-form
     MatInputModule,
     MatCheckboxModule
   ],
-  providers: [SubmitService],
+  providers: [SubmitService, {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}],
   bootstrap: [AppComponent]
 })
 export class AppModule {

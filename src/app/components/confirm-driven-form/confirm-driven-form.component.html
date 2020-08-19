@@ -4,12 +4,12 @@
     <button type="button"  style="float: right;" mat-flat-button (click)="reset()">Clear all</button>
     <mat-form-field class="full-width-field">
       <mat-label>Name</mat-label>
-      <input matInput [(ngModel)]="user.name" name="userName" required>
+      <input matInput [(ngModel)]="user.name" name="userName" required [pattern]="englishNamePattern">
     </mat-form-field>
     <br>
     <mat-form-field class="full-width-field">
       <mat-label>Surname</mat-label>
-      <input matInput [(ngModel)]="user.surname" name="userSurname" required>
+      <input matInput [(ngModel)]="user.surname" name="userSurname" required [pattern]="englishNamePattern">
     </mat-form-field>
     <br>
     <mat-form-field class="full-width-field">
@@ -19,7 +19,7 @@
     <br>
     <mat-form-field class="full-width-field">
       <mat-label>Phone</mat-label>
-      <input matInput [(ngModel)]="user.phone" name="userPhone">
+      <input matInput [(ngModel)]="user.phone" name="userPhone" [pattern]="phoneNumberPattern">
     </mat-form-field>
     <br>
     <mat-form-field class="full-width-field">

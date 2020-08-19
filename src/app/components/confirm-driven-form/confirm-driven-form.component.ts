@@ -9,6 +9,8 @@ import {SubmitService} from '../../services/submit.service';
 })
 export class ConfirmFormDrivenComponent implements OnInit {
   user = {} as User;
+  phoneNumberPattern = "^[+0-9]?[0-9\\.\\-\\(\\)]+$";
+  englishNamePattern = "^[a-zA-Z]+$";
   constructor(private submitService:SubmitService) { }
 
   ngOnInit(): void {
