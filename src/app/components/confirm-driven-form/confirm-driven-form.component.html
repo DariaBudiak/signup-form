@@ -1,0 +1,36 @@
+<div class="border">
+ <h1>Template-driven Form:</h1>
+  <form #submitForm="ngForm" (ngSubmit)="onSubmit()">
+    <button type="button"  style="float: right;" mat-flat-button (click)="reset()">Clear all</button>
+    <mat-form-field class="full-width-field">
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="user.name" name="userName" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width-field">
+      <mat-label>Surname</mat-label>
+      <input matInput [(ngModel)]="user.surname" name="userSurname" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width-field">
+      <mat-label>Address</mat-label>
+      <input matInput [(ngModel)]="user.address" name="userAddress">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width-field">
+      <mat-label>Phone</mat-label>
+      <input matInput [(ngModel)]="user.phone" name="userPhone">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width-field">
+      <mat-label>Comments</mat-label>
+      <textarea matInput [(ngModel)]="user.comments"name="userComments" ></textarea>
+    </mat-form-field>
+    <br>
+    <mat-checkbox  required [(ngModel)]="user.privacy" name="userPrivacy"> I agreed with the privacy policy </mat-checkbox>
+    <br>
+    <div class="button-footer">
+      <button style="width: 100%;" type="submit"  mat-raised-button color="primary" [disabled]="!submitForm.valid" >Submit</button>
+    </div>
+  </form>
+</div>

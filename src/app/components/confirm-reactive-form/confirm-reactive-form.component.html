@@ -1,14 +1,15 @@
 <div class="border">
+ <h1>Reactive Form:</h1>
 <form [formGroup]="form" (ngSubmit)="onSubmitModelBased()" >
   <button type="button"  style="float: right;" mat-flat-button (click)="reset()">Clear all</button>
   <mat-form-field class="full-width-field">
     <mat-label>Name</mat-label>
-    <input matInput formControlName="name">
+    <input matInput formControlName="name" required>
   </mat-form-field>
   <br>
   <mat-form-field class="full-width-field">
     <mat-label>Surname</mat-label>
-    <input matInput formControlName="surname">
+    <input matInput formControlName="surname" required>
   </mat-form-field>
   <br>
   <mat-form-field class="full-width-field">
@@ -29,7 +30,7 @@
   <mat-checkbox  required formControlName="privacy"> I agreed with the privacy policy </mat-checkbox>
   <br>
   <div class="button-footer">
-    <button style="width: 100%;" type="submit"  mat-raised-button color="primary" [disabled]="!form.valid" (submit)="onSubmitModelBased()">Submit</button>
+    <button style="width: 100%;" type="submit"  mat-raised-button color="primary" [disabled]="!form.valid">Submit</button>
   </div>
 
 </form>

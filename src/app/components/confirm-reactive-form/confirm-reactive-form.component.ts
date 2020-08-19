@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder }
-    from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { User }  from '../../models/app.model';
 import {SubmitService} from '../../services/submit.service';
 
 @Component({
-  selector: 'app-confirm-form',
-  templateUrl: './confirm-form.component.html',
-  styleUrls: ['./confirm-form.component.css']
+  selector: 'app-reactive-confirm-form',
+  templateUrl: './confirm-reactive-form.component.html',
+  styleUrls: ['./confirm-reactive-form.component.css']
 })
-export class ConfirmFormComponent implements OnInit {
+export class ConfirmReactiveFormComponent implements OnInit {
 
   form: FormGroup;
   user: User;
@@ -29,7 +28,6 @@ export class ConfirmFormComponent implements OnInit {
       ])],
       "address":[''],
       "phone":['', Validators.compose([
-        Validators.required,
         Validators.pattern(this.phoneNumberPattern)
       ])],
       "comments":[''],
