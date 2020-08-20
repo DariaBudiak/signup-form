@@ -1,37 +1,43 @@
-<div class="border">
+<app-loading-form *ngIf="loading"></app-loading-form>
+<app-not-found *ngIf="!loading && isNotFound"></app-not-found>
+<div class="border" *ngIf="!loading && !isNotFound">
  <h1>Reactive Form:</h1>
 <form [formGroup]="form" (ngSubmit)="onSubmitModelBased()" >
-  <button type="button"  style="float: right;" mat-flat-button (click)="reset()">Clear all</button>
+  <button type="button"  style="float: right;" mat-flat-button (click)="reset()" *ngIf="isNewForm()">Clear all</button>
+  <mat-form-field class="full-width-field" *ngIf="personId!=-1">
+    <mat-label>Id</mat-label>
+    <input matInput formControlName="id" [readonly]="!isNewForm()">
+  </mat-form-field>
   <mat-form-field class="full-width-field">
     <mat-label>Name</mat-label>
-    <input matInput formControlName="name" name="userName" required>
+    <input matInput formControlName="name" name="userName" required [readonly]="!isNewForm()">
   </mat-form-field>
   <br>
   <mat-form-field class="full-width-field">
     <mat-label>Surname</mat-label>
-    <input matInput formControlName="surname" required>
+    <input matInput formControlName="surname" required [readonly]="!isNewForm()">
   </mat-form-field>
   <br>
   <mat-form-field class="full-width-field">
     <mat-label>Address</mat-label>
-    <input matInput formControlName="address">
+    <input matInput formControlName="address" [readonly]="!isNewForm()">
   </mat-form-field>
   <br>
   <mat-form-field class="full-width-field">
     <mat-label>Phone</mat-label>
-    <input matInput formControlName="phone">
+    <input matInput formControlName="phone" [readonly]="!isNewForm()">
   </mat-form-field>
   <br>
   <mat-form-field class="full-width-field">
     <mat-label>Comments</mat-label>
-    <textarea matInput formControlName="comments"></textarea>
+    <textarea matInput formControlName="comments" [readonly]="!isNewForm()"></textarea>
   </mat-form-field>
   <br>
-  <mat-checkbox  required formControlName="privacy"> I agreed with the privacy policy </mat-checkbox>
+  <mat-checkbox  required formControlName="privacy" [disabled]="!isNewForm()"> I agreed with the privacy policy </mat-checkbox>
   <br>
   <div class="button-footer">
     <button  type="button"   [routerLink]="''"  mat-stroked-button color="primary">Back</button>
-    <button  type="submit"  mat-raised-button color="primary" [disabled]="!form.valid">Submit</button>
+    <button  type="submit"  mat-raised-button color="primary" [disabled]="!form.valid" *ngIf="isNewForm()">Submit</button>
   </div>
 
 </form>

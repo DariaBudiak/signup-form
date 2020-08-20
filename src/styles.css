@@ -28,6 +28,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   margin:10px;
 }
 
+
 @media only screen and (max-width: 350px) {
   .flex-item{
     max-width: 250px;

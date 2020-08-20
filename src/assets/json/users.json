@@ -1,0 +1,20 @@
+[
+    {
+        "id": "1",
+        "address": "12st Street, New York, USA",
+        "comments": "Hi there!",
+        "name": "Jonh",
+        "phone": "123123123",
+        "privacy": true,
+        "surname": "Doe"
+    },
+    {
+        "id": "2",
+        "address": "60492 Frankfurt Germany",
+        "comments": "This is my comment",
+        "name": "Paul",
+        "phone": "321321321",
+        "privacy": false,
+        "surname": "Smith"
+    }
+]

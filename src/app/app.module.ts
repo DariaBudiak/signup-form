@@ -15,13 +15,18 @@ import { ConfirmFormDrivenComponent } from './components/confirm-driven-form/con
 import { ConfirmReactiveFormComponent } from './components/confirm-reactive-form/confirm-reactive-form.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { LoadingFormComponent } from './components/loading-form/loading-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConfirmReactiveFormComponent,
     ConfirmFormDrivenComponent,
-    DashboardComponent
+    DashboardComponent,
+    NotFoundComponent,
+    LoadingFormComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     MatGridListModule,
     MatInputModule,
     MatCheckboxModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [SubmitService, {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}],
   bootstrap: [AppComponent]

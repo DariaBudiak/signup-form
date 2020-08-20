@@ -1,37 +1,46 @@
-<div class="border">
+<app-loading-form *ngIf="loading"></app-loading-form>
+<app-not-found *ngIf="!loading && isNotFound"></app-not-found>
+<div class="border" *ngIf="!loading && !isNotFound">
  <h1>Template-driven Form:</h1>
   <form #submitForm="ngForm" (ngSubmit)="onSubmit()">
-    <button type="button"  style="float: right;" mat-flat-button (click)="reset(submitForm)">Clear all</button>
+    <button type="button"  style="float: right;" mat-flat-button (click)="reset(submitForm)" *ngIf="isNewForm()">Clear all</button>
+    <mat-form-field class="full-width-field" *ngIf="!isNewForm()">
+      <mat-label>Id</mat-label>
+      <input matInput [(ngModel)]="user.id" name="userId"required [readonly]="!isNewForm()">
+    </mat-form-field>
     <mat-form-field class="full-width-field">
       <mat-label>Name</mat-label>
-      <input matInput [(ngModel)]="user.name" name="userName" required [pattern]="englishNamePattern">
+      <input matInput [(ngModel)]="user.name" name="userName" required [pattern]="englishNamePattern" [readonly]="!isNewForm()">
     </mat-form-field>
     <br>
     <mat-form-field class="full-width-field">
       <mat-label>Surname</mat-label>
-      <input matInput [(ngModel)]="user.surname" name="userSurname" required [pattern]="englishNamePattern">
+      <input matInput [(ngModel)]="user.surname" name="userSurname" required [pattern]="englishNamePattern" [readonly]="!isNewForm()">
     </mat-form-field>
     <br>
     <mat-form-field class="full-width-field">
       <mat-label>Address</mat-label>
-      <input matInput [(ngModel)]="user.address" name="userAddress">
+      <input matInput [(ngModel)]="user.address" name="userAddress" [readonly]="!isNewForm()">
     </mat-form-field>
     <br>
     <mat-form-field class="full-width-field">
       <mat-label>Phone</mat-label>
-      <input matInput [(ngModel)]="user.phone" name="userPhone" [pattern]="phoneNumberPattern">
+      <input matInput [(ngModel)]="user.phone" name="userPhone" [pattern]="phoneNumberPattern" [readonly]="!isNewForm()">
     </mat-form-field>
     <br>
     <mat-form-field class="full-width-field">
       <mat-label>Comments</mat-label>
-      <textarea matInput [(ngModel)]="user.comments"name="userComments" ></textarea>
+      <textarea matInput [(ngModel)]="user.comments"name="userComments" [readonly]="!isNewForm()"></textarea>
     </mat-form-field>
     <br>
-    <mat-checkbox  required [(ngModel)]="user.privacy" name="userPrivacy"> I agreed with the privacy policy </mat-checkbox>
+    <mat-checkbox  required [(ngModel)]="user.privacy" name="userPrivacy" [disabled]="!isNewForm()"> I agreed with the privacy policy </mat-checkbox>
     <br>
     <div class="button-footer">
       <button  type="button"   [routerLink]="''"  mat-stroked-button color="primary" >Back</button>
-      <button  type="submit"  mat-raised-button color="primary" [disabled]="!submitForm.valid" >Submit</button>
+      <button  type="submit"  mat-raised-button color="primary" [disabled]="!submitForm.valid" *ngIf="isNewForm()" >Submit</button>
     </div>
   </form>
 </div>
+
+
+
