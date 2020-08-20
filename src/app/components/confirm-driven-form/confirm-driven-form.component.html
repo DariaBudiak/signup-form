@@ -1,7 +1,7 @@
 <div class="border">
  <h1>Template-driven Form:</h1>
   <form #submitForm="ngForm" (ngSubmit)="onSubmit()">
-    <button type="button"  style="float: right;" mat-flat-button (click)="reset()">Clear all</button>
+    <button type="button"  style="float: right;" mat-flat-button (click)="reset(submitForm)">Clear all</button>
     <mat-form-field class="full-width-field">
       <mat-label>Name</mat-label>
       <input matInput [(ngModel)]="user.name" name="userName" required [pattern]="englishNamePattern">

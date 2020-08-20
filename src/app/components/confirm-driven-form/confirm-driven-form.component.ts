@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User }  from '../../models/app.model';
 import {SubmitService} from '../../services/submit.service';
-
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-confirm-form-driven',
   templateUrl: './confirm-driven-form.component.html',
@@ -20,8 +20,10 @@ export class ConfirmFormDrivenComponent implements OnInit {
     this.submitService.onSubmit(this.user);
   }
 
-  reset(){
-    this.user = {} as User;
+  reset(form :NgForm){
+
+    form.resetForm();
+
   }
 
 }

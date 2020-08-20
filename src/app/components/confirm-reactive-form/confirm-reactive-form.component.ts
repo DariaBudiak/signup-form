@@ -45,6 +45,7 @@ export class ConfirmReactiveFormComponent implements OnInit {
 
   reset() {
     this.form.reset();
+    this.form.clearValidators();
   }
 
 
