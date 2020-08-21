@@ -4,7 +4,7 @@ import { SubmitService } from '../../services/submit.service';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ApiServiceService } from '../../services/api-service/api-service.service';
-import { LocationChangeEvent } from '@angular/common';
+
 @Component({
   selector: 'app-confirm-form-driven',
   templateUrl: './confirm-driven-form.component.html',
