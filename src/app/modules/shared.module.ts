@@ -39,7 +39,9 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     MatGridListModule,
     MatInputModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    NotFoundComponent,
+    LoadingFormComponent
   ]
 })
 export class SharedModule { }
