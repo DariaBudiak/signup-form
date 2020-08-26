@@ -31,27 +31,23 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 @media only screen and (max-width: 350px) {
   .flex-item{
-    max-width: 250px;
-    width: 100%;
+    width: 260px;
   }
 }
 
 @media (orientation:portrait) and (min-width: 360px)and (max-width: 600px){
   .flex-item{
-    max-width: 300px;
-    width: 100%;
+    width: 320px;
   }
 }
 @media (orientation:portrait) and (min-width: 568px) and (max-width: 899px){
   .flex-item{
-    max-width: 350px;
-    width: 100%;
+    width: 350px;
   }
 }
 @media  (orientation:landscape) and (min-width: 568px) and (max-width: 899px){
   .flex-item{
-    max-width: 350px;
-    width: 100%;
+    width: 350px;
   }
   .main-container{
     display: inline-grid;
@@ -59,13 +55,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 @media (min-width: 900px), (orientation:portrait) and (min-width: 768px){
   .flex-item{
-    max-width: 350px;
-    width: 100%;
+    width: 350px;
   }
 }
 @media (max-height: 410px){
   .flex-item{
-    max-width: 350px;
-    width: 100%;
+    width: 350px;
   }
 }

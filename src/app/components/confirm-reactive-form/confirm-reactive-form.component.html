@@ -1,5 +1,6 @@
 <app-loading-form *ngIf="loading"></app-loading-form>
 <app-not-found *ngIf="!loading && isNotFound"></app-not-found>
+<div class="flex-item">
 <div class="border" *ngIf="!loading && !isNotFound">
  <h1>Reactive Form:</h1>
 <form [formGroup]="form" (ngSubmit)="onSubmitModelBased()" >
@@ -41,4 +42,5 @@
   </div>
 
 </form>
+</div>
 </div>

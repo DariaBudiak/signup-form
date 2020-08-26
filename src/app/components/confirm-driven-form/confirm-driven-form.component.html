@@ -1,5 +1,6 @@
 <app-loading-form *ngIf="loading"></app-loading-form>
 <app-not-found *ngIf="!loading && isNotFound"></app-not-found>
+<div class="flex-item">
 <div class="border" *ngIf="!loading && !isNotFound">
  <h1>Template-driven Form:</h1>
   <form #submitForm="ngForm" (ngSubmit)="onSubmit()">
@@ -41,6 +42,6 @@
     </div>
   </form>
 </div>
-
+</div>
 
 
